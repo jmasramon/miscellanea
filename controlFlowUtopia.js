@@ -59,6 +59,8 @@ asyncParseJson('user.json', console.log);
 // 	} 
 // }
 
+
+/////////////////////////////////////////
 /////////////// promises ////////////////
 
 console.log('************* promisified *************');
@@ -76,12 +78,15 @@ for (let file of fileList2) {
 	promisifiedParseJson(file)
 		.then(console.log)
 		.error(function(e) {
-			console.log('promisified', e.message);
+			console.log('promisified error:', e.message);
 		})
 		.catch(function(e) {
-			console.log('promisified', e.message);
+			console.log('promisified exception:', e.message);
 		});
 }
+
+//////////////////////////////////////////
+// generators
 
 function *numbers() {
 	let i = 0;
@@ -114,4 +119,47 @@ for (let i of take5(numGen)){
 console.log('numbers:',  numGen.next(-1).value);
 console.log('numbers:',  numGen.next().value);
 
+///////////////////////////////////////////////
+// promises + generators 
+
+console.log('****************** utopia **********************');
+
+function async(generator) {
+	let it = generator();
+
+	runner(it.next());
+
+	function runner(yielded) {
+		if (!yielded.done) {
+			yielded.value
+				.then(function(res) {
+					runner(it.next(res));
+				})
+				.error(function(e) {
+					console.log('utopian error:', e.message);
+				})
+				.catch(function(e) {
+					it.throw(e);
+				});
+		} 
+	}
+}
+
+function syncAssyncParseJson(file) {
+	async (
+		function *() {
+			try {
+				let content = yield fs.readFileAsync(file);
+				console.log('utopian result:', JSON.stringify(JSON.parse(content),null,2));
+			} catch(e) {
+				console.log('utopian exception:', e.message);
+			}
+			return;
+		});
+}
+
+syncAssyncParseJson('user.json');
+for (let file of fileList2) {
+	syncAssyncParseJson(file);
+}
 
