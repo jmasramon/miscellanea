@@ -187,6 +187,7 @@ var readJSON = async2(function *(filename){
   return JSON.parse(yield fs.readFileAsync(filename, 'utf8'));
 });
 
+// you can combine(chain) them 
 var get = async2(function *(){
   var left = yield readJSON('user.json');
   var right = yield readJSON('user2.json');
@@ -211,7 +212,7 @@ var getMany = async2(function *() {
 	return results;
 });
 
-// still returning a promise
+// no side effects but still returning a promise
 get().then(function(res) {
 	console.log('forbesian:', res.left);
 	console.log('forbesian:', res.right);
@@ -226,7 +227,26 @@ getMany().then(function(results) {
 	for (let res of results) {
 		console.log('forbesian for:', res);
 	}	
-})
+});
+
+// but, really, no need to work with promises directly
+(async2(function *() {
+	let rAndl = yield get();
+	console.log('forbesian 2:', rAndl.left);
+	console.log('forbesian 2:', rAndl.right);
+	
+	rAndl = yield getParallel();
+	console.log('forbesian parallel 2:', rAndl.left);
+	console.log('forbesian parallel 2:', rAndl.right);	
+
+	let results = yield getMany();
+	for (let res of results) {
+		console.log('forbesian for 2:', res);
+	}	
+
+}))();
+
+
 
 
 
