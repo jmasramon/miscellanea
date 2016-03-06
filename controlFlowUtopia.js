@@ -159,7 +159,76 @@ function syncAssyncParseJson(file) {
 }
 
 syncAssyncParseJson('user.json');
+
 for (let file of fileList2) {
 	syncAssyncParseJson(file);
 }
+
+////////////////////// forbes way //////////////////////
+function async2(makeGenerator){
+  return function (){
+    var generator = makeGenerator.apply(this, arguments);
+    
+    function handle(result){ // { done: [Boolean], value: [Object] }
+      if (result.done) return result.value;
+      
+      return result.value.then(function (res){
+        return handle(generator.next(res));
+      }, function (err){
+        return handle(generator.throw(err));
+      });
+    }
+    
+    return handle(generator.next());
+  };
+}
+
+var readJSON = async2(function *(filename){
+  return JSON.parse(yield fs.readFileAsync(filename, 'utf8'));
+});
+
+var get = async2(function *(){
+  var left = yield readJSON('user.json');
+  var right = yield readJSON('user2.json');
+  return {left: left, right: right};
+});
+
+var getParallel = async2(function *(){
+  var left = readJSON('user.json');
+  var right = readJSON('user2.json');
+  return {left: yield left, right: yield right};
+});
+
+var getMany = async2(function *() {
+	let results = [];
+	for (let file of fileList2) {
+		try {
+			results.push(yield readJSON(file));
+		} catch(e) {
+			results.push(e.message);
+		}
+	}
+	return results;
+});
+
+// still returning a promise
+get().then(function(res) {
+	console.log('forbesian:', res.left);
+	console.log('forbesian:', res.right);
+});
+
+getParallel().then(function(res) {
+	console.log('forbesian parallel:', res.left);
+	console.log('forbesian parallel:', res.right);	
+});
+
+getMany().then(function(results) {
+	for (let res of results) {
+		console.log('forbesian for:', res);
+	}	
+})
+
+
+
+
 
