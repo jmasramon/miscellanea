@@ -1,0 +1,55 @@
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:16:42.142Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:16:42.146Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:16:42.148Z"}
+{"level":"error","message":"Only errors shouldbe printed","timestamp":"2016-04-14T13:16:42.148Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:17:14.222Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:17:14.227Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:17:14.229Z"}
+{"level":"error","message":"Only errors shouldbe printed from now on","timestamp":"2016-04-14T13:17:14.229Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:20:42.724Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:20:42.728Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:20:42.730Z"}
+{"level":"error","message":"Only errors shouldbe printed from now on","timestamp":"2016-04-14T13:20:42.730Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:21:10.860Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:21:10.863Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:21:10.865Z"}
+{"level":"error","message":"Only errors shouldbe printed from now on","timestamp":"2016-04-14T13:21:10.865Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:21:34.706Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:21:34.710Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:21:34.712Z"}
+{"level":"error","message":"Only errors shouldbe printed from now on","timestamp":"2016-04-14T13:21:34.713Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:22:17.757Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:22:17.761Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:22:17.763Z"}
+{"level":"error","message":"Only errors should be printed from now on","timestamp":"2016-04-14T13:22:17.763Z"}
+{"level":"error","message":"This error should be printed from now on","timestamp":"2016-04-14T13:22:17.763Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:22:54.271Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:22:54.275Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:22:54.276Z"}
+{"level":"error","message":"Only errors should be printed from now on","timestamp":"2016-04-14T13:22:54.277Z"}
+{"level":"error","message":"This error should be printed from now on","timestamp":"2016-04-14T13:22:54.277Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:24:47.066Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:24:47.069Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:24:47.071Z"}
+{"level":"error","message":"Only errors should be printed from now on","timestamp":"2016-04-14T13:24:47.072Z"}
+{"level":"error","message":"This error should be printed from now on","timestamp":"2016-04-14T13:24:47.072Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:26:30.783Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:26:30.792Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:26:30.795Z"}
+{"level":"error","message":"Only errors should be printed from now on","timestamp":"2016-04-14T13:26:30.795Z"}
+{"level":"error","message":"This error should be printed from now on","timestamp":"2016-04-14T13:26:30.795Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:27:10.998Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:27:11.008Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:27:11.011Z"}
+{"level":"error","message":"Only errors should be printed from now on","timestamp":"2016-04-14T13:27:11.012Z"}
+{"level":"error","message":"This error should be printed from now on","timestamp":"2016-04-14T13:27:11.012Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:27:12.419Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:27:12.428Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:27:12.431Z"}
+{"level":"error","message":"Only errors should be printed from now on","timestamp":"2016-04-14T13:27:12.431Z"}
+{"level":"error","message":"This error should be printed from now on","timestamp":"2016-04-14T13:27:12.432Z"}
+{"level":"info","message":"Hello distributed log files!","timestamp":"2016-04-14T13:27:32.383Z"}
+{"level":"info","message":"Hello again distributed logs","timestamp":"2016-04-14T13:27:32.392Z"}
+{"level":"debug","message":"Now my debug messages are written to console!","timestamp":"2016-04-14T13:27:32.395Z"}
+{"level":"error","message":"Only errors should be printed from now on","timestamp":"2016-04-14T13:27:32.395Z"}
+{"level":"error","message":"This error should be printed from now on","timestamp":"2016-04-14T13:27:32.396Z"}
